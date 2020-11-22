@@ -1,0 +1,30 @@
+<div class="generate-data-form" *ngIf="messageView === true">
+  <mat-card-content>
+    <div class="generate-data-form-container">
+    <form [formGroup]="messageDetailForm">
+            <div fxLayout="row" fxLayoutAlign="space-around center">
+                    <div>
+                        <mat-form-field>
+                            <mat-label>Phone No</mat-label>
+                            <input matInput="matInput" class="form-control" formControlName="phoneNumber" type="text" [(ngModel)]="phoneNumber" placeholder="Enter Phone Number" minlength=12 maxlength=12 digitOnly required>
+                        </mat-form-field>
+                    </div>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="space-around center">
+                <div>
+                    <mat-form-field>
+                        <mat-label>Message</mat-label>
+                        <input matInput="matInput" class="form-control" formControlName="message" type="text" [(ngModel)]="message" placeholder="Enter Message" minlength=1 maxlength=1024 required>
+                    </mat-form-field>
+                </div>
+           </div>
+           <div>
+            <button mat-raised-button="mat-raised-button" aligne="center" color="primary" (click)='sendMessage(phoneNumber, message)' [disabled]="messageDetailForm.invalid">Submit</button>
+        </div>
+    </form>
+    </div>
+</mat-card-content>
+<div class="generate-data-form-container">   
+    <span matBadge="4" matBadgeOverlap="false">{{ responseMessage }}</span>
+</div>
+</div>

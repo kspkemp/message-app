@@ -1,0 +1,11 @@
+.generate-data-form-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 1.5em;
+}
+.generate-data-form-container form{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1em;
+}
